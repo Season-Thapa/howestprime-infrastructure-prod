@@ -33,3 +33,8 @@ variable "resource_names" {
   description = "Map of resource names to assign to the resources."
   type        = map(string)
 }
+variable "cloudamqp_api_token" {
+  description = "API token for CloudAMQP"
+  type        = string
+  sensitive   = true
+}

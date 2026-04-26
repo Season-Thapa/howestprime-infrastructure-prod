@@ -10,6 +10,10 @@ terraform {
       source  = "hashicorp/azuread"
       version = "~> 3.0.0"
     }
+        cloudamqp = {
+      source  = "cloudamqp/cloudamqp"
+      version = "~>1.42"
+    }
   }
 }
 
@@ -32,4 +36,7 @@ provider "azurerm" {
 
 provider "azuread" {
   tenant_id = var.howestprime_tenant_id
+}
+provider "cloudamqp" {
+  apikey = var.cloudamqp_api_token
 }

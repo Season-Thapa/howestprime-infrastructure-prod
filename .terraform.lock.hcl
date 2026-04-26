@@ -1,6 +1,20 @@
 # This file is maintained automatically by "terraform init".
 # Manual edits may be lost in future updates.
 
+provider "registry.terraform.io/cloudamqp/cloudamqp" {
+  version     = "1.44.4"
+  constraints = "~> 1.42"
+  hashes = [
+    "h1:GIvebRKQDbm48h1y+E+aAMkpthlrqNloKMb8Dj9kT+4=",
+    "zh:074acf3711c9a58a758e1c5e00c8281a16c462e53e05f00c7340c0e1e2dc5ae0",
+    "zh:38a8bdb0a30ea1e6c763fa4ff68aa99233cb16f191b41c29d39d620e7ec3b408",
+    "zh:3a1d9410b119f8cf736d307b45b982e5bb96093b57fbd22c82ab6d45ec97f5af",
+    "zh:40ce517059e637d5bebe700b868ec1262331767d2dec36f0e5c287462e767b6f",
+    "zh:4e3f3797c3029f555a9536a91f3a7e99c56a0923a059210b08abe0ce584016c0",
+    "zh:74b8dfc5c0785b99d0a93246c85316cf79e459ae774b6ec9f877d85457bcc11a",
+  ]
+}
+
 provider "registry.terraform.io/hashicorp/azuread" {
   version     = "3.0.2"
   constraints = "~> 3.0.0"
