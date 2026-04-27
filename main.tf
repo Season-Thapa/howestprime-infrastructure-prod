@@ -10,7 +10,7 @@ terraform {
       source  = "hashicorp/azuread"
       version = "~> 3.0.0"
     }
-        cloudamqp = {
+    cloudamqp = {
       source  = "cloudamqp/cloudamqp"
       version = "~>1.42"
     }
@@ -25,7 +25,6 @@ provider "azurerm" {
     }
   }
 
-  # These are needed so Terraform can register the container apps provider
   resource_providers_to_register = ["Microsoft.App"]
 
   subscription_id = var.howestprime_subscription_id
@@ -36,6 +35,8 @@ provider "azurerm" {
 
 provider "azuread" {
   tenant_id = var.howestprime_tenant_id
+   client_id     = var.service_principal_terraform_client_id
+  client_secret = var.service_principal_terraform_secret
 }
 provider "cloudamqp" {
   apikey = var.cloudamqp_api_token
