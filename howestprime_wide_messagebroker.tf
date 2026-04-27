@@ -15,3 +15,4 @@ resource "azurerm_key_vault_secret" "messagebroker_password" {
     azurerm_role_assignment.terraform_kv_admin
   ]
 }
+
