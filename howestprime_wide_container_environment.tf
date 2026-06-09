@@ -4,3 +4,4 @@ resource "azurerm_container_app_environment" "howestprime" {
   resource_group_name        = azurerm_resource_group.howestprime.name
   log_analytics_workspace_id = azurerm_log_analytics_workspace.howestprime.id
 }
+
