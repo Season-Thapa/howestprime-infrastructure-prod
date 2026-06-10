@@ -33,7 +33,7 @@ variable "resource_names" {
   description = "Map of resource names to assign to the resources."
   type        = map(string)
 }
-variable "usernames" {
+variable "login_names" {
   description = "A map of usernames"
   type        = map(string)
 

@@ -7,7 +7,7 @@ resource "azurerm_postgresql_flexible_server" "movies" {
   name                          = var.resource_names["azurerm_postgresql_flexible_server_movies"]
   location                      = azurerm_resource_group.howestprime.location
   resource_group_name           = azurerm_resource_group.howestprime.name
-  administrator_login           = var.usernames["howestprime_microservice_movies_db"]
+  administrator_login           = var.login_names["howestprime_microservice_movies_db"]
   administrator_password        = random_password.postgres_password.result
   version                       = "13"
   storage_mb                    = 32768
@@ -52,15 +52,15 @@ locals {
     5432
   )
   messagebroker_password_uri = regex("(https://[^/]+/secrets/[^/]+)",
-    azurerm_key_vault_secret.messagebroker_password.id)[0]
+  azurerm_key_vault_secret.messagebroker_password.id)[0]
 
   psql_password_uri = regex("(https://[^/]+/secrets/[^/]+)",
-    azurerm_key_vault_secret.movies_db_password.id)[0]
+  azurerm_key_vault_secret.movies_db_password.id)[0]
 
   howestprime_movies_gh_action_variables = {
     howestprime_movies_p_plsql_login = {
       variable_name = "howestprime_movies_p_psql_login"
-      value = var.usernames["howestprime_microservice_movies_db"]
+      value         = var.login_names["howestprime_microservice_movies_db"]
     }
     howestprime_movies_p_plslq_connection_string = {
       variable_name = "howestprime_movies_p_psql_connection_string"
@@ -119,7 +119,7 @@ locals {
   howestprime_movies_gh_action_secrets = {
     howestprime_wide_ci_service_principal = {
       secret_name = "howestprime_wide_ci_service_principal"
-      value       =  azuread_application.github-ci-app.client_id
+      value       = azuread_application.github-ci-app.client_id
     }
     howestprime_wide_ci_service_principal_password = {
       secret_name = "howestprime_wide_ci_service_principal_password"
