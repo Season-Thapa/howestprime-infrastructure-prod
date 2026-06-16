@@ -15,7 +15,7 @@ resource "azurerm_linux_web_app" "client_webapp" {
     minimum_tls_version = "1.2"
     application_stack {
       docker_image_name   = "howestprime-client-webapp:latest"
-      docker_registry_url = "https://howestprimewideseason.azurecr.io"
+      docker_registry_url = "https://hcr.technet.howest.be"
     }
 
     cors {
@@ -26,7 +26,7 @@ resource "azurerm_linux_web_app" "client_webapp" {
     enabled = false
   }
   app_settings = {
-    DOCKER_REGISTRY_URL                 = "https://howestprimewideseason.azurecr.io"
+    DOCKER_REGISTRY_URL                 = "https://hcr.technet.howest.be"
     WEBSITES_ENABLE_APP_SERVICE_STORAGE = "false"
     VITE_APP_TICKETING_API_URL          = "https://microservice-ticketing.salmonbay-7ecb7d24.francecentral.azurecontainerapps.io"
     VITE_APP_MOVIES_BASE_API_URL        = "https://microservice-movies.salmonbay-7ecb7d24.francecentral.azurecontainerapps.io"
